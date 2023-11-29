@@ -242,7 +242,7 @@ document.addEventListener('keypress', (event) => {
   } else if (code === 'KeyS') {
     // save to svg
     if (window.domtoimage) {
-      window.domtoimage.toSvg(document.getElementById('box-container') as HTMLDivElement).then(dataUrl => {
+      window.domtoimage.toSvg(document.getElementById('app') as HTMLDivElement).then(dataUrl => {
         const link = document.createElement('a');
         link.setAttribute('href', dataUrl);
         link.setAttribute('download', 'memories#1');
