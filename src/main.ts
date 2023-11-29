@@ -215,6 +215,8 @@ const resizeWindow = () => {
 
 // set dimension
 document.addEventListener('DOMContentLoaded', () => {
+  // @ts-ignore
+  document.oncontextmenu = new Function("return false;")
   resizeWindow();
   setCssProperties('app', {
     display: 'flex',
