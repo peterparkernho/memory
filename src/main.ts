@@ -41,7 +41,7 @@ const showBrief = () => {
   setCssProperties('chat-brief', {
     display: 'flex'
   });
-  getElement('guide-change-view')!.innerText = "press ( i ) to show  history";
+  getElement('guide-change-view')!.innerText = "press (i) to show  history";
 }
 
 const showHistory = () => {
@@ -60,10 +60,10 @@ const createMessageItem = (message: Message) => {
   item.classList.add('conversation__item');
   item.innerHTML = `
     <div class="conversation__item__info">
-      <span class="conversation__item__info__user user-text-color">${message.user}:</span>
-      <span class="conversation__item__info__time date-color">${message.createdAt}</span>
+      <span class="conversation__item__info__user list-sender">${message.user}:</span>
+      <span class="conversation__item__info__time list-created-at">${message.createdAt}</span>
     </div>
-    <div class="conversation__item__message text-color">
+    <div class="conversation__item__message list-chat-message">
       ${message.message}
     </div>
   `;
@@ -74,6 +74,55 @@ const applyColor = () => {
   const colors = getColorPalettes(window.seed);
 
   if (colors.length) {
+    const header = document.getElementById('heading');
+    if (header) {
+      setCssProperties(header as HTMLDivElement, {
+        color: colors[6],
+      });
+    }
+
+    const briefTime = document.getElementById('brief-time');
+    if (briefTime) {
+      setCssProperties(briefTime as HTMLDivElement, {
+        color: colors[7],
+      });
+    }
+
+    const sender = document.getElementById('brief-heading-username');
+    if (sender) {
+      setCssProperties(sender as HTMLDivElement, {
+        color: colors[8],
+      });
+    }
+
+    const replyLabel = document.getElementById('brief-replyto-user');
+    if (replyLabel) {
+      setCssProperties(replyLabel as HTMLDivElement, {
+        color: colors[9],
+      });
+    }
+    const replyMessage = document.getElementById('brief-replyto-message');
+    if (replyMessage) {
+      setCssProperties(replyMessage as HTMLDivElement, {
+        color: colors[10],
+        backgroundColor: colors[11],
+      });
+    }
+
+    const guideSave = document.getElementById('guide-save');
+    if (guideSave) {
+      setCssProperties(guideSave as HTMLDivElement, {
+        color: colors[12],
+      });
+    }
+    const guideChangeView = document.getElementById('guide-change-view');
+    if (guideChangeView) {
+      setCssProperties(guideChangeView as HTMLDivElement, {
+        color: colors[12],
+      });
+    }
+    
+
     const textElements = document.getElementsByClassName('text-color');
     for (const element of textElements) {
       setCssProperties(element as HTMLDivElement, {
@@ -84,7 +133,7 @@ const applyColor = () => {
     const boxElements = document.getElementsByClassName('box-color');
     for (const element of boxElements) {
       setCssProperties(element as HTMLDivElement, {
-        borderColor: colors[0],
+        borderColor: colors[5],
       });
     }
 
@@ -95,24 +144,24 @@ const applyColor = () => {
       });
     }
 
-    const dateElements = document.getElementsByClassName('date-color');
+    const dateElements = document.getElementsByClassName('list-created-at');
     for (const element of dateElements) {
       setCssProperties(element as HTMLDivElement, {
-        color: colors[2],
+        color: colors[14],
       });
     }
 
-    const replyBackgroundElements = document.getElementsByClassName('reply-background-color');
-    for (const element of replyBackgroundElements) {
-      setCssProperties(element as HTMLDivElement, {
-        backgroundColor: colors[3],
-      });
-    }
-    
-    const userElements = document.getElementsByClassName('user-text-color');
+    const userElements = document.getElementsByClassName('list-sender');
     for (const element of userElements) {
       setCssProperties(element as HTMLDivElement, {
-        color: colors[4],
+        color: colors[13],
+      });
+    }
+
+    const chatMessages = document.getElementsByClassName('list-chat-message');
+    for (const element of chatMessages) {
+      setCssProperties(element as HTMLDivElement, {
+        color: colors[15],
       });
     }
   }
