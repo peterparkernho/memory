@@ -55,6 +55,24 @@ export const COLOR_PALETTES = [
     '#393526', // 14
     '#EDC00B', // 15
   ], // TERMINAL-01
+  [
+    '#FFFFFF', // 0
+    '#000000', // 1
+    '#FFFFFF', // 2
+    '#FFFFFF', // 3
+    '#FFFFFF', // 4
+    '#FFFFFF', // 5
+    '#FFFFFF', // 6
+    '#FFFFFF', // 7
+    '#FFFFFF', // 8
+    '#FFFFFF', // 9
+    '#FFFFFF', // 10
+    '#000000', // 11
+    '#FFFFFF', // 12
+    '#FFFFFF', // 13
+    '#2F2F2F', // 14
+    '#FFFFFF', // 15
+  ], // TERMINAL-02
 ]
 // 0: text color
 // 1: background color
