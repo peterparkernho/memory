@@ -21,7 +21,7 @@ html,body {
 * {
   box-sizing: border-box;
   user-select: none;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 
 /* ::-webkit-scrollbar {
