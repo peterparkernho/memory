@@ -192,31 +192,38 @@ const createMessageDom = () => {
   }
 }
 
-// set dimension
-document.addEventListener('DOMContentLoaded', () => {
+const resizeWindow = () => {
   const width = window.innerWidth;
   const height = window.innerHeight;
 
-  window.collectionName = window.collectionName || '';
+  setCssProperties('box-container', {
+    width: 'unset',
+    height: 'unset',
+    display: 'flex'
+  });
 
-  createMessageDom();
-  applyColor();
-
-  showBrief();
   if (width <= height) {
     setCssProperties('box-container', {
       width: '100vw',
-      display: 'flex'
     });
   } else {
     setCssProperties('box-container', {
       height: '100vh',
-      display: 'flex'
     });
   }
+}
+
+// set dimension
+document.addEventListener('DOMContentLoaded', () => {
+  resizeWindow();
   setCssProperties('app', {
     display: 'flex',
   });
+
+  window.collectionName = window.collectionName || '';
+  createMessageDom();
+  applyColor();
+  showBrief();
 });
 
 document.addEventListener('keypress', (event) => {
@@ -239,4 +246,8 @@ document.addEventListener('keypress', (event) => {
       })
     }
   }
+})
+
+window.addEventListener('resize', () => {
+  resizeWindow();
 })
