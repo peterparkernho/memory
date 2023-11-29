@@ -66,6 +66,7 @@ html,body {
   display: none;
   flex-direction: column;
   gap: 1.6rem;
+  box-shadow: 0px 0px 10px 10px #00000021;
 }
 
 .box {

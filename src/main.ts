@@ -204,11 +204,13 @@ const resizeWindow = () => {
 
   if (width <= height) {
     setCssProperties('box-container', {
-      width: '100vw',
+      width: `${width}px`,
+      height: `${width}px`
     });
   } else {
     setCssProperties('box-container', {
-      height: '100vh',
+      width: `${height}px`,
+      height: `${height}px`
     });
   }
 }
