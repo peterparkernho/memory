@@ -24,6 +24,17 @@ html {
   }
 }
 
+@media only screen and (max-width: 400px) {
+  html {
+    font-size: 4px;
+  }
+
+  :root {
+    --max-width: 100vw !important;
+    --max-height: 100vh !important;
+  }
+}
+
 @media only screen and (max-width: 320px) {
   html {
     font-size: 3px;
@@ -32,17 +43,6 @@ html {
   :root {
     --max-width: 100vw !important;
     --max-height: 100vh !important;
-  }
-
-  .guide__save,
-  .guide__full {
-    font-size: 1.2rem !important;
-    line-height: 2.8rem !important;
-  }
-
-  .brief__time {
-    font-size: 1.4rem !important;
-    line-height: 3.8rem !important;
   }
 }
 
