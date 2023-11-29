@@ -186,7 +186,7 @@ const createMessageDom = () => {
       getElement('brief-replyto-message')!.innerText = `${window.brief.replyTo.message}`
     }
     // create histories
-    window.histories.forEach(message => createMessageItem(message));
+    window.histories.reverse().forEach(message => createMessageItem(message));
   } catch (e) {
     //
   }
