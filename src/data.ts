@@ -110,4 +110,4 @@ window.histories = [
   },
 ]
 
-window.seed = 6
+window.seed = 3
